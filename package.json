@@ -1,0 +1,23 @@
+{
+  "name": "mockserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors",
+    "mock": "./node_modules/.bin/gulp mock",
+    "start": "concurrently 'webpack-dev-server --progress --colors' './node_modules/.bin/gulp mock'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "concurrently": "^3.5.1",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "http-proxy-middleware": "^0.17.4",
+    "json-server": "^0.12.1",
+    "mockjs": "^1.0.1-beta3"
+  }
+}
