@@ -16,12 +16,6 @@ const filter = (pathname, req) => {
 }
 
 server.use(proxy(filter, { target: 'http://localhost:8080', changeOrigin: true }), (request, res, next) => {
-    if (routes[request.url] !== undefined) {
-        console.log('found it')
-    } else {
-        console.log('not found')
-    }
-
     // request.method = 'GET'
     next()
 })
