@@ -8,6 +8,9 @@
     "mock": "./node_modules/.bin/gulp mock",
     "start": "concurrently 'webpack-dev-server --progress --colors' './node_modules/.bin/gulp mock'"
   },
+  "engines": {
+    "npm": "~6.11.5"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

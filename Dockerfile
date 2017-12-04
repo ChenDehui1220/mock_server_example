@@ -8,6 +8,6 @@ WORKDIR /html
 
 RUN npm install
 
-EXPOSE 4200
+EXPOSE 3000
 
 CMD npm start
