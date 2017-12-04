@@ -1,6 +1,7 @@
 web:
   image: node:6.11.5
   ports:
+    - "4080:8080"
     - "4090:5000"
   volumes:
     - ./code:/html

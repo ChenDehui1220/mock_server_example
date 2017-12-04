@@ -6,7 +6,7 @@
   "scripts": {
     "mock": "./node_modules/.bin/gulp mock",
     "start": "concurrently './node_modules/.bin/webpack-dev-server --progress --colors' './node_modules/.bin/gulp mock'",
-    "server": "concurrently './node_modules/.bin/webpack-dev-server --progress --colors' './node_modules/.bin/gulp mock --env beta'"
+    "server": "set process.env.NODE_ENV=beta && concurrently './node_modules/.bin/webpack-dev-server --progress --colors' './node_modules/.bin/gulp mock --env beta'"
   },
   "engines": {
     "npm": "~6.11.5"
