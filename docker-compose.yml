@@ -1,7 +1,7 @@
 web:
   # image: registry.hiiir.com/huayun
   # ports:
-  #   - "5090:4200"
+  #   - "4090:3000"
  volumes:
    - ./code:/html
  working_dir: /html
