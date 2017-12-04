@@ -29,7 +29,7 @@ gulp.task('bs-delay', function() {
 gulp.task('nodemon', function(cb) {
     var started = false
     var stream = nodemon({
-        script: (args.env === 'dev') ? './mock/server_dev.js' : './mock/server_beta.js',
+        script: './mock/server.js',
         ext: 'js',
         env: {
             NODE_ENV: 'development'

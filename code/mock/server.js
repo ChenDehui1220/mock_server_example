@@ -15,9 +15,7 @@ const filter = (pathname, req) => {
     return (routes[req.url] === undefined && !/(db|rules|\/get)/i.test(req.url))
 }
 
-const proxyUrl = 'http://localhost:8080'
-
-server.use(proxy(filter, { target: proxyUrl, changeOrigin: true }), (request, res, next) => {
+server.use(proxy(filter, { target: 'http://localhost:8080', changeOrigin: true }), (request, res, next) => {
     // request.method = 'GET'
     next()
 })

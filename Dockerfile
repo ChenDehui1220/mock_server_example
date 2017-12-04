@@ -6,8 +6,8 @@ ADD code /html
 
 WORKDIR /html
 
-RUN npm install
+RUN npm install webpack -g && npm install
 
 EXPOSE 5000
 
-CMD npm start
+CMD npm run server
