@@ -12,7 +12,7 @@ const rewriter = jsonServer.rewriter(routes)
 server.use(middlewares)
 
 const filter = (pathname, req) => {
-    return (routes[req.url] === undefined && !/(db|rules)/i.test(req.url))
+    return (routes[req.url] === undefined && !/(db|rules|\/get)/i.test(req.url))
 }
 
 server.use(proxy(filter, { target: 'http://localhost:8080', changeOrigin: true }), (request, res, next) => {

@@ -3,12 +3,15 @@ const gulp = require('gulp')
 const nodemon = require('gulp-nodemon')
 const browserSync = require('browser-sync').create()
 const server = path.resolve(__dirname, 'mock')
+const args = require('yargs').argv
 
 gulp.task('browser-sync', ['nodemon'], function() {
-    browserSync.init(null, {
-        proxy: 'http://localhost:8080', // 这里的端口和webpack的端口一致
-        port: 8081
-    })
+    if (args.env === undefined || args.env !== 'dev') {
+        browserSync.init(null, {
+            proxy: 'http://localhost:8080', // 这里的端口和webpack的端口一致
+            port: 8081
+        })
+    }
 })
 
 gulp.task('mock', ['browser-sync'], function() {
@@ -16,9 +19,11 @@ gulp.task('mock', ['browser-sync'], function() {
 })
 
 gulp.task('bs-delay', function() {
-    setTimeout(function() {
-        browserSync.reload()
-    }, 1000)
+    if (args.env === undefined || args.env !== 'dev') {
+        setTimeout(function() {
+            browserSync.reload()
+        }, 1000)
+    }
 })
 
 gulp.task('nodemon', function(cb) {
