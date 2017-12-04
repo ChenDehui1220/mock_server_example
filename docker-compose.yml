@@ -1,0 +1,8 @@
+web:
+  # image: registry.hiiir.com/huayun
+  # ports:
+  #   - "5090:4200"
+ volumes:
+   - ./code:/html
+ working_dir: /html
+ command: npm start
