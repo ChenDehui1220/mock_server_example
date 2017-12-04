@@ -1,8 +1,8 @@
 web:
-  image: node:6.11.5
+  image: registry.hiiir.com/f2emock
   ports:
     - "4090:5000"
-  volumes:
-    - ./code:/html
-  working_dir: /html
-  command: npm run server
+  #volumes:
+  #  - ./code:/html
+  #working_dir: /html
+  #command: npm run server
