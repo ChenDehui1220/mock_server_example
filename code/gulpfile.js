@@ -6,7 +6,7 @@ const server = path.resolve(__dirname, 'mock')
 const args = require('yargs').argv
 
 gulp.task('browser-sync', ['nodemon'], function() {
-    if (args.env === undefined || args.env !== 'dev') {
+    if (args.env === 'dev') {
         browserSync.init(null, {
             proxy: 'http://localhost:8080', // 这里的端口和webpack的端口一致
             port: 8081
@@ -19,7 +19,7 @@ gulp.task('mock', ['browser-sync'], function() {
 })
 
 gulp.task('bs-delay', function() {
-    if (args.env === undefined || args.env !== 'dev') {
+    if (args.env === 'dev') {
         setTimeout(function() {
             browserSync.reload()
         }, 1000)
@@ -29,7 +29,7 @@ gulp.task('bs-delay', function() {
 gulp.task('nodemon', function(cb) {
     var started = false
     var stream = nodemon({
-        script: './mock/server.js',
+        script: (args.env === 'dev') ? './mock/server_dev.js' : './mock/server_beta.js',
         ext: 'js',
         env: {
             NODE_ENV: 'development'
