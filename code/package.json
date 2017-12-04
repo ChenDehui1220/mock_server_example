@@ -22,8 +22,9 @@
     "http-proxy-middleware": "^0.17.4",
     "json-server": "^0.12.1",
     "mockjs": "^1.0.1-beta3",
-    "webpack": "^3.9.1",
     "webpack-dev-server": "^2.9.5",
     "yargs": "^10.0.3"
+  },
+  "devDependencies": {
   }
 }
